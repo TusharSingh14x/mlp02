@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Network Security URL Scanner</title>
+    <style>
+        :root { --ink: #17232c; --muted: #66737d; --paper: #f4f1eb; --accent: #d85b3f; --line: #d8d3ca; }
+        * { box-sizing: border-box; }
+        body { margin: 0; color: var(--ink); background: radial-gradient(circle at 15% 10%, #fff 0, transparent 35%), var(--paper); font: 16px Georgia, serif; }
+        main { max-width: 880px; margin: 0 auto; padding: 8vh 24px; }
+        h1 { max-width: 650px; margin: 0 0 12px; font-size: clamp(2.4rem, 7vw, 5.6rem); line-height: .95; font-weight: 500; }
+        .lede { max-width: 570px; color: var(--muted); font-size: 1.15rem; line-height: 1.5; }
+        form { display: flex; gap: 10px; margin: 42px 0 24px; max-width: 720px; }
+        input { flex: 1; min-width: 0; padding: 16px; border: 1px solid var(--line); background: #fffdf9; font: inherit; }
+        button { border: 0; padding: 0 24px; color: white; background: var(--accent); font: inherit; cursor: pointer; }
+        .result, .error { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 28px; }
+        .risk { display: inline-block; padding: 8px 12px; color: white; background: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+        .result h2 { font-size: 2rem; margin: 16px 0 8px; }
+        .result p { color: var(--muted); }
+        li { margin: 9px 0; }
+        .explanation { display: grid; gap: 10px; max-width: 680px; padding: 0; list-style: none; }
+        .explanation li { display: grid; grid-template-columns: 1fr auto; gap: 12px; border-bottom: 1px solid var(--line); padding: 10px 0; }
+        .phishing { color: #b43c2c; }
+        .legitimate { color: #2b7564; }
+        .method { color: var(--muted); font-size: .9rem; }
+        a { color: var(--accent); }
+        @media (max-width: 600px) { form { display: block; } input, button { width: 100%; min-height: 52px; } button { margin-top: 8px; } }
+    </style>
+</head>
+<body>
+<main>
+    <p>NETWORK SECURITY / URL INTELLIGENCE</p>
+    <h1>Is this URL trying to fool you?</h1>
+    <p class="lede">Paste a URL to score its phishing risk from the trained network-security model and see which signals shaped the result.</p>
+    <form method="post" action="/predict">
+        <input name="url" type="url" placeholder="https://example.com/login" required>
+        <button type="submit">Scan URL</button>
+    </form>
+    <p><a href="/docs">API documentation</a> · <a href="/history">Recent scan history</a></p>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    {% if result %}
+    <section class="result">
+        <span class="risk">{{ result.risk }} risk</span>
+        <h2>{{ result.prediction | capitalize }}</h2>
+        <p>{{ result.url }} · {{ (result.phishing_probability * 100) | round(1) }}% estimated phishing probability</p>
+        <h3>Why the model decided this</h3>
+        <p class="method">Explanation method: {{ result.explanation.method }}. Positive contributions increase phishing risk.</p>
+        <ul class="explanation">{% for item in result.explanation.features %}<li><strong>{{ item.feature }}</strong><span class="{{ item.direction }}">{{ item.direction }} {{ item.contribution }}</span></li>{% endfor %}</ul>
+    </section>
+    {% endif %}
+</main>
+</body>
+</html>
