@@ -32,11 +32,14 @@ from sklearn.ensemble import (
     GradientBoostingClassifier,
     RandomForestClassifier,
 )
-import mlflow
+try:
+    import mlflow
+except ImportError:
+    mlflow = None
 from urllib.parse import urlparse
 
-import dagshub
-#dagshub.init(repo_owner='krishnaik06', repo_name='networksecurity', mlflow=True)
+# MLflow tracking initialization
+
 
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
@@ -47,7 +50,7 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
         
     def track_mlflow(self,best_model,classificationmetric):
-        if not os.getenv("MLFLOW_TRACKING_URI"):
+        if mlflow is None or not os.getenv("MLFLOW_TRACKING_URI"):
             return
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         with mlflow.start_run():

@@ -1,0 +1,8 @@
+[ 2026-11-12 19:37:47,336 ] 577 matplotlib - WARNING - /Users/testaccount/.matplotlib is not a writable directory
+[ 2026-11-12 19:37:47,337 ] 596 matplotlib - WARNING - Matplotlib created a temporary cache directory at /var/folders/5r/pt53v6s101n7f7cdb5q7cwd80000gp/T/matplotlib-18vcbz3z because there was an issue with the default path (/Users/testaccount/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[ 2026-11-12 19:37:52,372 ] 1249 matplotlib.font_manager - WARNING - Matplotlib is building the font cache; this may take a moment.
+[ 2026-11-12 19:38:00,646 ] 1263 matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/Fonts/Apple Color Emoji.ttc: Non-scalable fonts are not supported
+[ 2026-11-12 19:38:00,686 ] 1263 matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/Fonts/LastResort.otf: tuple indices must be integers or slices, not str
+[ 2026-11-12 19:38:01,100 ] 1263 matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc: FT_Open_Face (ft2font.cpp line 200) failed with error 0x02: unknown file format
+[ 2026-11-12 19:38:01,380 ] 1263 matplotlib.font_manager - INFO - Failed to extract font properties from /System/Library/Fonts/Supplemental/NISC18030.ttf: Non-scalable fonts are not supported
+[ 2026-11-12 19:38:01,460 ] 1848 matplotlib.font_manager - INFO - generated new fontManager
