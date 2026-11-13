@@ -1,0 +1,554 @@
+{
+  "All": {
+    "Logistic Regression": {
+      "accuracy_mean": 0.9272,
+      "accuracy_std": 0.0049,
+      "precision_mean": 0.9258,
+      "precision_std": 0.009,
+      "recall_mean": 0.9451,
+      "recall_std": 0.0034,
+      "f1_mean": 0.9353,
+      "f1_std": 0.0041,
+      "roc_auc_mean": 0.9788,
+      "roc_auc_std": 0.0024,
+      "pr_auc_mean": 0.9823,
+      "pr_auc_std": 0.0023,
+      "mcc_mean": 0.8524,
+      "mcc_std": 0.01,
+      "confusion_matrix": [
+        [
+          4431,
+          467
+        ],
+        [
+          338,
+          5819
+        ]
+      ]
+    },
+    "Decision Tree": {
+      "accuracy_mean": 0.9471,
+      "accuracy_std": 0.0025,
+      "precision_mean": 0.9581,
+      "precision_std": 0.005,
+      "recall_mean": 0.9464,
+      "recall_std": 0.0047,
+      "f1_mean": 0.9522,
+      "f1_std": 0.0022,
+      "roc_auc_mean": 0.9836,
+      "roc_auc_std": 0.0028,
+      "pr_auc_mean": 0.9813,
+      "pr_auc_std": 0.0036,
+      "mcc_mean": 0.8931,
+      "mcc_std": 0.0051,
+      "confusion_matrix": [
+        [
+          4643,
+          255
+        ],
+        [
+          330,
+          5827
+        ]
+      ]
+    },
+    "Random Forest": {
+      "accuracy_mean": 0.9617,
+      "accuracy_std": 0.0035,
+      "precision_mean": 0.9547,
+      "precision_std": 0.0068,
+      "recall_mean": 0.9777,
+      "recall_std": 0.0036,
+      "f1_mean": 0.9661,
+      "f1_std": 0.003,
+      "roc_auc_mean": 0.9949,
+      "roc_auc_std": 0.0005,
+      "pr_auc_mean": 0.9959,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9226,
+      "mcc_std": 0.0071,
+      "confusion_matrix": [
+        [
+          4612,
+          286
+        ],
+        [
+          137,
+          6020
+        ]
+      ]
+    },
+    "Gradient Boosting": {
+      "accuracy_mean": 0.9609,
+      "accuracy_std": 0.0019,
+      "precision_mean": 0.9593,
+      "precision_std": 0.0055,
+      "recall_mean": 0.9711,
+      "recall_std": 0.0032,
+      "f1_mean": 0.9651,
+      "f1_std": 0.0016,
+      "roc_auc_mean": 0.9946,
+      "roc_auc_std": 0.0004,
+      "pr_auc_mean": 0.9956,
+      "pr_auc_std": 0.0006,
+      "mcc_mean": 0.9208,
+      "mcc_std": 0.0039,
+      "confusion_matrix": [
+        [
+          4644,
+          254
+        ],
+        [
+          178,
+          5979
+        ]
+      ]
+    },
+    "XGBoost": {
+      "accuracy_mean": 0.9633,
+      "accuracy_std": 0.0017,
+      "precision_mean": 0.9626,
+      "precision_std": 0.0051,
+      "recall_mean": 0.9719,
+      "recall_std": 0.0053,
+      "f1_mean": 0.9672,
+      "f1_std": 0.0015,
+      "roc_auc_mean": 0.9947,
+      "roc_auc_std": 0.0005,
+      "pr_auc_mean": 0.9957,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9256,
+      "mcc_std": 0.0033,
+      "confusion_matrix": [
+        [
+          4665,
+          233
+        ],
+        [
+          173,
+          5984
+        ]
+      ]
+    },
+    "LightGBM": {
+      "accuracy_mean": 0.965,
+      "accuracy_std": 0.0023,
+      "precision_mean": 0.9627,
+      "precision_std": 0.0068,
+      "recall_mean": 0.975,
+      "recall_std": 0.0049,
+      "f1_mean": 0.9688,
+      "f1_std": 0.002,
+      "roc_auc_mean": 0.995,
+      "roc_auc_std": 0.0005,
+      "pr_auc_mean": 0.9959,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9291,
+      "mcc_std": 0.0047,
+      "confusion_matrix": [
+        [
+          4665,
+          233
+        ],
+        [
+          154,
+          6003
+        ]
+      ]
+    },
+    "Stacking Ensemble (Proposed)": {
+      "accuracy_mean": 0.9645,
+      "accuracy_std": 0.002,
+      "precision_mean": 0.9636,
+      "precision_std": 0.0057,
+      "recall_mean": 0.9732,
+      "recall_std": 0.0038,
+      "f1_mean": 0.9683,
+      "f1_std": 0.0016,
+      "roc_auc_mean": 0.9953,
+      "roc_auc_std": 0.0004,
+      "pr_auc_mean": 0.9962,
+      "pr_auc_std": 0.0004,
+      "mcc_mean": 0.9282,
+      "mcc_std": 0.0039,
+      "confusion_matrix": [
+        [
+          4671,
+          227
+        ],
+        [
+          165,
+          5992
+        ]
+      ]
+    }
+  },
+  "Top-30": {
+    "Logistic Regression": {
+      "accuracy_mean": 0.9272,
+      "accuracy_std": 0.0049,
+      "precision_mean": 0.9258,
+      "precision_std": 0.009,
+      "recall_mean": 0.9451,
+      "recall_std": 0.0034,
+      "f1_mean": 0.9353,
+      "f1_std": 0.0041,
+      "roc_auc_mean": 0.9788,
+      "roc_auc_std": 0.0024,
+      "pr_auc_mean": 0.9823,
+      "pr_auc_std": 0.0023,
+      "mcc_mean": 0.8524,
+      "mcc_std": 0.01,
+      "confusion_matrix": [
+        [
+          4431,
+          467
+        ],
+        [
+          338,
+          5819
+        ]
+      ]
+    },
+    "Decision Tree": {
+      "accuracy_mean": 0.9472,
+      "accuracy_std": 0.0027,
+      "precision_mean": 0.9583,
+      "precision_std": 0.0048,
+      "recall_mean": 0.9464,
+      "recall_std": 0.0041,
+      "f1_mean": 0.9523,
+      "f1_std": 0.0024,
+      "roc_auc_mean": 0.984,
+      "roc_auc_std": 0.0028,
+      "pr_auc_mean": 0.9816,
+      "pr_auc_std": 0.0034,
+      "mcc_mean": 0.8932,
+      "mcc_std": 0.0055,
+      "confusion_matrix": [
+        [
+          4644,
+          254
+        ],
+        [
+          330,
+          5827
+        ]
+      ]
+    },
+    "Random Forest": {
+      "accuracy_mean": 0.9616,
+      "accuracy_std": 0.0038,
+      "precision_mean": 0.9544,
+      "precision_std": 0.0073,
+      "recall_mean": 0.9779,
+      "recall_std": 0.0032,
+      "f1_mean": 0.966,
+      "f1_std": 0.0033,
+      "roc_auc_mean": 0.995,
+      "roc_auc_std": 0.0006,
+      "pr_auc_mean": 0.996,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9224,
+      "mcc_std": 0.0077,
+      "confusion_matrix": [
+        [
+          4610,
+          288
+        ],
+        [
+          136,
+          6021
+        ]
+      ]
+    },
+    "Gradient Boosting": {
+      "accuracy_mean": 0.9605,
+      "accuracy_std": 0.0024,
+      "precision_mean": 0.959,
+      "precision_std": 0.0058,
+      "recall_mean": 0.9706,
+      "recall_std": 0.0033,
+      "f1_mean": 0.9647,
+      "f1_std": 0.002,
+      "roc_auc_mean": 0.9946,
+      "roc_auc_std": 0.0004,
+      "pr_auc_mean": 0.9956,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9199,
+      "mcc_std": 0.0049,
+      "confusion_matrix": [
+        [
+          4642,
+          256
+        ],
+        [
+          181,
+          5976
+        ]
+      ]
+    },
+    "XGBoost": {
+      "accuracy_mean": 0.9634,
+      "accuracy_std": 0.0012,
+      "precision_mean": 0.9621,
+      "precision_std": 0.0052,
+      "recall_mean": 0.9726,
+      "recall_std": 0.0046,
+      "f1_mean": 0.9673,
+      "f1_std": 0.001,
+      "roc_auc_mean": 0.9948,
+      "roc_auc_std": 0.0005,
+      "pr_auc_mean": 0.9958,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9258,
+      "mcc_std": 0.0024,
+      "confusion_matrix": [
+        [
+          4662,
+          236
+        ],
+        [
+          169,
+          5988
+        ]
+      ]
+    },
+    "LightGBM": {
+      "accuracy_mean": 0.9649,
+      "accuracy_std": 0.0017,
+      "precision_mean": 0.9627,
+      "precision_std": 0.0056,
+      "recall_mean": 0.9748,
+      "recall_std": 0.0045,
+      "f1_mean": 0.9687,
+      "f1_std": 0.0015,
+      "roc_auc_mean": 0.995,
+      "roc_auc_std": 0.0005,
+      "pr_auc_mean": 0.9959,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9289,
+      "mcc_std": 0.0035,
+      "confusion_matrix": [
+        [
+          4665,
+          233
+        ],
+        [
+          155,
+          6002
+        ]
+      ]
+    },
+    "Stacking Ensemble (Proposed)": {
+      "accuracy_mean": 0.9651,
+      "accuracy_std": 0.0018,
+      "precision_mean": 0.9638,
+      "precision_std": 0.0063,
+      "recall_mean": 0.974,
+      "recall_std": 0.0046,
+      "f1_mean": 0.9688,
+      "f1_std": 0.0015,
+      "roc_auc_mean": 0.9954,
+      "roc_auc_std": 0.0004,
+      "pr_auc_mean": 0.9963,
+      "pr_auc_std": 0.0004,
+      "mcc_mean": 0.9293,
+      "mcc_std": 0.0036,
+      "confusion_matrix": [
+        [
+          4672,
+          226
+        ],
+        [
+          160,
+          5997
+        ]
+      ]
+    }
+  },
+  "Top-20": {
+    "Logistic Regression": {
+      "accuracy_mean": 0.9252,
+      "accuracy_std": 0.0051,
+      "precision_mean": 0.9222,
+      "precision_std": 0.0102,
+      "recall_mean": 0.9456,
+      "recall_std": 0.0034,
+      "f1_mean": 0.9337,
+      "f1_std": 0.0041,
+      "roc_auc_mean": 0.9778,
+      "roc_auc_std": 0.0027,
+      "pr_auc_mean": 0.9817,
+      "pr_auc_std": 0.0024,
+      "mcc_mean": 0.8484,
+      "mcc_std": 0.0103,
+      "confusion_matrix": [
+        [
+          4406,
+          492
+        ],
+        [
+          335,
+          5822
+        ]
+      ]
+    },
+    "Decision Tree": {
+      "accuracy_mean": 0.9466,
+      "accuracy_std": 0.0041,
+      "precision_mean": 0.9557,
+      "precision_std": 0.0086,
+      "recall_mean": 0.9482,
+      "recall_std": 0.0058,
+      "f1_mean": 0.9519,
+      "f1_std": 0.0035,
+      "roc_auc_mean": 0.9828,
+      "roc_auc_std": 0.0018,
+      "pr_auc_mean": 0.9808,
+      "pr_auc_std": 0.0023,
+      "mcc_mean": 0.8921,
+      "mcc_std": 0.0085,
+      "confusion_matrix": [
+        [
+          4627,
+          271
+        ],
+        [
+          319,
+          5838
+        ]
+      ]
+    },
+    "Random Forest": {
+      "accuracy_mean": 0.9627,
+      "accuracy_std": 0.0021,
+      "precision_mean": 0.9588,
+      "precision_std": 0.0054,
+      "recall_mean": 0.975,
+      "recall_std": 0.0033,
+      "f1_mean": 0.9668,
+      "f1_std": 0.0017,
+      "roc_auc_mean": 0.9944,
+      "roc_auc_std": 0.0006,
+      "pr_auc_mean": 0.9955,
+      "pr_auc_std": 0.0006,
+      "mcc_mean": 0.9245,
+      "mcc_std": 0.0042,
+      "confusion_matrix": [
+        [
+          4640,
+          258
+        ],
+        [
+          154,
+          6003
+        ]
+      ]
+    },
+    "Gradient Boosting": {
+      "accuracy_mean": 0.9585,
+      "accuracy_std": 0.0022,
+      "precision_mean": 0.9579,
+      "precision_std": 0.0045,
+      "recall_mean": 0.968,
+      "recall_std": 0.0029,
+      "f1_mean": 0.9629,
+      "f1_std": 0.0019,
+      "roc_auc_mean": 0.9937,
+      "roc_auc_std": 0.0007,
+      "pr_auc_mean": 0.9948,
+      "pr_auc_std": 0.0007,
+      "mcc_mean": 0.9158,
+      "mcc_std": 0.0045,
+      "confusion_matrix": [
+        [
+          4636,
+          262
+        ],
+        [
+          197,
+          5960
+        ]
+      ]
+    },
+    "XGBoost": {
+      "accuracy_mean": 0.9605,
+      "accuracy_std": 0.002,
+      "precision_mean": 0.9588,
+      "precision_std": 0.0054,
+      "recall_mean": 0.9708,
+      "recall_std": 0.0043,
+      "f1_mean": 0.9647,
+      "f1_std": 0.0017,
+      "roc_auc_mean": 0.994,
+      "roc_auc_std": 0.0005,
+      "pr_auc_mean": 0.9951,
+      "pr_auc_std": 0.0005,
+      "mcc_mean": 0.9199,
+      "mcc_std": 0.0041,
+      "confusion_matrix": [
+        [
+          4641,
+          257
+        ],
+        [
+          180,
+          5977
+        ]
+      ]
+    },
+    "LightGBM": {
+      "accuracy_mean": 0.9618,
+      "accuracy_std": 0.0018,
+      "precision_mean": 0.9599,
+      "precision_std": 0.0046,
+      "recall_mean": 0.9721,
+      "recall_std": 0.0049,
+      "f1_mean": 0.9659,
+      "f1_std": 0.0016,
+      "roc_auc_mean": 0.9943,
+      "roc_auc_std": 0.0006,
+      "pr_auc_mean": 0.9953,
+      "pr_auc_std": 0.0006,
+      "mcc_mean": 0.9227,
+      "mcc_std": 0.0037,
+      "confusion_matrix": [
+        [
+          4648,
+          250
+        ],
+        [
+          172,
+          5985
+        ]
+      ]
+    },
+    "Stacking Ensemble (Proposed)": {
+      "accuracy_mean": 0.9634,
+      "accuracy_std": 0.0015,
+      "precision_mean": 0.9632,
+      "precision_std": 0.0051,
+      "recall_mean": 0.9714,
+      "recall_std": 0.0047,
+      "f1_mean": 0.9673,
+      "f1_std": 0.0013,
+      "roc_auc_mean": 0.9946,
+      "roc_auc_std": 0.0006,
+      "pr_auc_mean": 0.9956,
+      "pr_auc_std": 0.0006,
+      "mcc_mean": 0.9258,
+      "mcc_std": 0.0031,
+      "confusion_matrix": [
+        [
+          4669,
+          229
+        ],
+        [
+          176,
+          5981
+        ]
+      ]
+    }
+  }
+}
