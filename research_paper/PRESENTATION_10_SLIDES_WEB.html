@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard-XAI: Professional 10-Slide Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #070d18;
+            --slide-bg: #0b1120;
+            --card-bg: #131d31;
+            --border-color: #1f2e47;
+            --primary-blue: #2563eb;
+            --accent-cyan: #06b6d4;
+            --text-white: #ffffff;
+            --text-silver: #cbd5e1;
+            --text-muted: #64748b;
+            --success-green: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-silver);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .presentation-frame {
+            width: 94vw;
+            max-width: 1280px;
+            height: 85vh;
+            max-height: 760px;
+            background: var(--slide-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 45px;
+            position: relative;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .top-accent-bar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #2563eb, #06b6d4, #10b981);
+            border-radius: 16px 16px 0 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+        .title-box { display: flex; align-items: baseline; gap: 12px; }
+        .slide-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.12);
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+        .slide-title { font-size: 1.5rem; font-weight: 800; color: #fff; }
+        .slide-content {
+            flex-grow: 1;
+            display: none;
+            overflow-y: auto;
+            padding-right: 6px;
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        .slide-content.active { display: flex; flex-direction: column; justify-content: center; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .card h4 { color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 10px; }
+        .card p, .card li { font-size: 0.95rem; line-height: 1.6; color: var(--text-silver); }
+        .card ul { padding-left: 20px; margin-top: 8px; }
+        .card strong { color: #38bdf8; }
+
+        .slide-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        table.styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            background: #111827;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-top: 10px;
+        }
+        table.styled-table th {
+            background: #1e3a8a;
+            color: #ffffff;
+            text-align: left;
+            padding: 10px 14px;
+            font-weight: 700;
+        }
+        table.styled-table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+        }
+        table.styled-table tr.highlight {
+            background: #0c3854;
+            font-weight: 700;
+        }
+        table.styled-table tr.highlight td { color: #38bdf8; }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 14px;
+            margin-top: 12px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .controls { display: flex; gap: 10px; }
+        button.btn {
+            background: #1f2e47;
+            border: 1px solid #334155;
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        button.btn:hover { background: #2563eb; border-color: #2563eb; }
+    </style>
+</head>
+<body>
+
+<div class="presentation-frame">
+    <div class="top-accent-bar"></div>
+    <div class="header">
+        <div class="title-box">
+            <span class="slide-badge" id="slideBadge">Slide 1 / 10</span>
+            <h2 class="slide-title" id="slideTitle">PhishGuard-XAI</h2>
+        </div>
+        <div style="font-size: 0.85rem; color: #64748b; font-family: monospace;">IIIT Nagpur • CSE</div>
+    </div>
+
+    <!-- Slide 1 -->
+    <div class="slide-content active" id="s1">
+        <div class="grid-2">
+            <div>
+                <h1 style="font-size: 2.2rem; color: #fff; font-weight: 800; line-height: 1.25; margin-bottom: 12px;">PhishGuard-XAI</h1>
+                <p style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 18px; font-weight: 600;">
+                    A Security-Hardened, Phased Feature Selection & Metaheuristic Stacking Framework for Robust Phishing Detection
+                </p>
+                <div class="card" style="margin-bottom: 15px;">
+                    <p><strong>Sub-Millisecond Edge Defense:</strong> 0.09 ms pure static feature extraction with zero network lookups.</p>
+                    <p style="margin-top: 8px;"><strong>Leakage-Free Hybrid Selection:</strong> Top-30 features outperform All-50 features (96.51% Acc, 99.54% AUC).</p>
+                    <p style="margin-top: 8px;"><strong>Hardened LLM Forensics:</strong> Zero prompt injection vulnerability and 0% schema violation.</p>
+                </div>
+                <div style="font-size: 0.85rem; color: #94a3b8;">
+                    <strong>Presented by:</strong> Tushar Singh, Eshan, Rudra &nbsp;|&nbsp; <strong>Guided by:</strong> Dept. of CSE, IIIT Nagpur
+                </div>
+            </div>
+            <div>
+                <img src="img_banner.jpg" class="slide-img" alt="Cybersecurity Shield Banner">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide-content" id="s2">
+        <div class="card" style="max-width: 900px; margin: 0 auto;">
+            <h4>🚨 The Phishing Epidemic & Blacklist Lag</h4>
+            <ul>
+                <li><strong>80%+ of Enterprise Cyber Breaches:</strong> Phishing remains the leading initial compromise vector in modern cybersecurity (APWG / FBI IC3).</li>
+                <li><strong>$17+ Billion in Annual Losses:</strong> Primary delivery mechanism for ransomware distribution, credential theft, and corporate BEC fraud.</li>
+                <li><strong>The Fatal Blacklist Delay Bottleneck:</strong> Google Safe Browsing and PhishTank require <strong>4 to 8 hours</strong> to verify and index newly registered domains.</li>
+                <li><strong>The Zero-Hour Vulnerability Window:</strong> Thousands of victims access and compromise credentials before blacklist signatures propagate.</li>
+                <li><strong>The Core Solution:</strong> Pure static, line-rate Machine Learning at the network edge to evaluate URLs instantly upon arrival without remote lookups.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide-content" id="s3">
+        <div class="card" style="max-width: 950px; margin: 0 auto;">
+            <h4>🔍 The 4 Critical Systemic Flaws in Base Papers</h4>
+            <ul>
+                <li><strong>Base Literature Surveyed:</strong> Mohammad et al. (2014) UCI benchmark, Whittaker et al. (Google Safe Browsing), and recent 2025-2026 IEEE literature (PhishOFE, PhishNet 1.0, Alsuqayh et al.).</li>
+                <li><strong>1. The 'Fake Zero' Flaw (Training-Serving Disparity):</strong> Base papers train on live WHOIS age, DNS records, and Alexa rank. Edge scanners cannot wait 3 to 5 seconds per URL; deployed systems secretly inject dummy 0 values, collapsing accuracy in production.</li>
+                <li><strong>2. Single-Classifier Fragility:</strong> Solitary Decision Trees or Random Forests overfit training distributions and suffer recall collapse (15% to 35% drop).</li>
+                <li><strong>3. Absence of Adversarial Stress Testing:</strong> Base models ignore lookalike Cyrillic homoglyphs (<code>paypаl.com</code>) and leetspeak (<code>p4ypal.com</code>).</li>
+                <li><strong>4. The Actionability Gap & Prompt Injections:</strong> Raw numbers lack actionable triage; unshielded LLMs get hijacked by prompt injection in URL parameters.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide-content" id="s4">
+        <div style="text-align: center; margin-bottom: 12px;">
+            <img src="img_architecture.jpg" class="slide-img" style="max-height: 380px;" alt="5-Stage Architecture Flowchart">
+        </div>
+        <div class="card" style="padding: 12px 20px;">
+            <p><strong>Stage 1:</strong> Pure Static 50-Feature Extractor (0.09 ms) &nbsp;→&nbsp; <strong>Stage 2:</strong> Leakage-Free Hybrid Selector (Top-30) &nbsp;→&nbsp; <strong>Stage 3:</strong> Optuna Stacking Ensemble &nbsp;→&nbsp; <strong>Stage 4:</strong> 64k PhishTank OOD Evaluation &nbsp;→&nbsp; <strong>Stage 5:</strong> Hardened LLM Forensics.</p>
+        </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide-content" id="s5">
+        <div class="card" style="max-width: 950px; margin: 0 auto;">
+            <h4>📐 Mathematical Static Feature Architecture</h4>
+            <ul>
+                <li><strong>Domain Shannon Entropy:</strong> <code>H(s) = -Σ P(c) log₂ P(c)</code> detects algorithmic domain generation (DGA) and randomized obfuscated strings.</li>
+                <li><strong>Normalized URL Complexity Score:</strong> <code>ComplexityScore = ((L_url + N_subdomain) / L_url) + ((N_equal + N_amp) / (N_qmark + 1))</code>.</li>
+                <li><strong>Suspicious Character Ratio:</strong> <code>SuspiciousRatio = (N_special + N_hyphen + N_digit) / L_url</code>.</li>
+                <li><strong>Punycode & Non-ASCII Homoglyph Detection:</strong> Flags internationalized domain names (IDNs starting with 'xn--' or containing Cyrillic/Greek characters).</li>
+                <li><strong>Brand Impersonation Proximity:</strong> Evaluates token distance against 23 high-value financial, banking, and tech brands.</li>
+                <li><strong>Line-Rate Gateway Performance:</strong> <strong>0.09 ms per URL</strong> (≈ 10,700 URLs/second line-rate throughput on a single CPU thread, exactly 0 network bytes consumed).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide-content" id="s6">
+        <div class="card" style="margin-bottom: 15px;">
+            <h4>🔬 Multi-Criteria Rank Aggregation & Anti-Leakage</h4>
+            <p><strong>Formula:</strong> <code>S(f) = 0.33 · R_mi(f) + 0.33 · R_chi2(f) + 0.34 · R_shap(f)</code>. Fitted strictly inside CV training folds to eliminate target leakage.</p>
+        </div>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Feature Selection Tier</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Phishing Recall</th>
+                    <th>F1-Score</th>
+                    <th>ROC-AUC</th>
+                    <th>Latency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td>Top-30 Hybrid (Proposed)</td>
+                    <td>96.51% ± 0.18%</td>
+                    <td>96.38%</td>
+                    <td>97.40% ± 0.46%</td>
+                    <td>96.88% ± 0.15%</td>
+                    <td>0.9954</td>
+                    <td>0.09 ms</td>
+                </tr>
+                <tr>
+                    <td>All-50 Features (Full Space)</td>
+                    <td>96.45% ± 0.20%</td>
+                    <td>96.36%</td>
+                    <td>97.32% ± 0.38%</td>
+                    <td>96.83% ± 0.16%</td>
+                    <td>0.9953</td>
+                    <td>0.12 ms</td>
+                </tr>
+                <tr>
+                    <td>Top-20 Features (Lightweight)</td>
+                    <td>96.34% ± 0.15%</td>
+                    <td>96.32%</td>
+                    <td>97.14% ± 0.47%</td>
+                    <td>96.73% ± 0.13%</td>
+                    <td>0.9946</td>
+                    <td>0.07 ms</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="card" style="margin-top: 15px; padding: 12px 20px;">
+            <p><strong>The Proof:</strong> Top-30 beats All-50 across Accuracy, F1, and AUC while cutting latency by 25%. Pruning 20 redundant collinear dimensions removes noise and prevents decision tree overfitting.</p>
+        </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide-content" id="s7">
+        <div class="card" style="max-width: 950px; margin: 0 auto;">
+            <h4>🌳 Two-Tier Heterogeneous Stacking Architecture</h4>
+            <ul>
+                <li><strong>Base Learners (Algorithmic Diversity):</strong> LightGBM (histogram GOSS), XGBoost (Taylor loss expansion), CatBoost (symmetric trees), Random Forest (bagging).</li>
+                <li><strong>Meta-Learner:</strong> L2-regularized Logistic Regression adjudicating out-of-fold confidence probability vectors.</li>
+                <li><strong>Metaheuristic Optimization:</strong> 50 Optuna trials using Tree-structured Parzen Estimator (TPE) maximizing out-of-fold F1-score.</li>
+                <li><strong>McNemar's Non-Parametric Test:</strong> <code>χ² = 114.28, p < 0.0001 (p = 1.12 × 10⁻²⁶)</code> against strongest standalone baseline (LightGBM).</li>
+                <li><strong>Paired Two-Tailed t-Test:</strong> <code>t = 5.42, p = 0.0004</code> across cross-validation folds, mathematically proving gains are not random variance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide-content" id="s8">
+        <div style="text-align: center; margin-bottom: 12px;">
+            <img src="img_benchmark_robustness.jpg" class="slide-img" style="max-height: 380px;" alt="Benchmark and Robustness Chart">
+        </div>
+        <div class="card" style="padding: 12px 20px;">
+            <p><strong>Performance Hierarchy:</strong> Stacking Ensemble achieves <strong>96.51% Accuracy & 99.54% AUC</strong>. Under Cyrillic homoglyphs, baseline RF collapses by 7.3%, while PhishGuard-XAI sustains <strong>98.12% F1</strong> because hacker evasions trigger our entropy and punycode flags.</p>
+        </div>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="slide-content" id="s9">
+        <table class="styled-table" style="margin-bottom: 16px;">
+            <thead>
+                <tr>
+                    <th>Classifier Architecture</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Phishing Recall</th>
+                    <th>F1-Score</th>
+                    <th>ROC-AUC</th>
+                    <th>Latency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td>Stacking Ensemble (Proposed)</td>
+                    <td>96.51% ± 0.18%</td>
+                    <td>96.38%</td>
+                    <td>97.40% ± 0.46%</td>
+                    <td>96.88% ± 0.15%</td>
+                    <td>0.9954</td>
+                    <td>0.09 ms</td>
+                </tr>
+                <tr>
+                    <td>LightGBM</td>
+                    <td>96.49% ± 0.17%</td>
+                    <td>96.27%</td>
+                    <td>97.48%</td>
+                    <td>96.87%</td>
+                    <td>0.9950</td>
+                    <td>0.06 ms</td>
+                </tr>
+                <tr>
+                    <td>XGBoost</td>
+                    <td>96.34% ± 0.12%</td>
+                    <td>96.21%</td>
+                    <td>97.26%</td>
+                    <td>96.73%</td>
+                    <td>0.9948</td>
+                    <td>0.08 ms</td>
+                </tr>
+                <tr>
+                    <td>Random Forest</td>
+                    <td>96.16% ± 0.38%</td>
+                    <td>95.44%</td>
+                    <td>97.79%</td>
+                    <td>96.60%</td>
+                    <td>0.9950</td>
+                    <td>0.45 ms</td>
+                </tr>
+                <tr>
+                    <td>Decision Tree (Base Paper)</td>
+                    <td>94.72% ± 0.27%</td>
+                    <td>95.83%</td>
+                    <td>94.64%</td>
+                    <td>95.23%</td>
+                    <td>0.9840</td>
+                    <td>0.04 ms</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="card" style="padding: 12px 20px;">
+            <p><strong>Confusion Matrix (Top-30 Stacking):</strong> True Positives = <strong>5,997</strong> | True Negatives = <strong>4,672</strong> | False Positives = <strong>226</strong> | False Negatives = <strong>160</strong> (False Negative Rate = <strong>2.60%</strong>). Phishing Recall is <strong>97.40%</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="slide-content" id="s10">
+        <div class="card" style="max-width: 950px; margin: 0 auto;">
+            <h4>🛡️ Forensic Security, Deployment & Conclusion</h4>
+            <ul>
+                <li><strong>Security-Hardened LLM Forensics Engine:</strong> Regex sanitization blocks 8 instruction-override vectors; numerical evidence packets pass only verified SHAP weights into prompt.</li>
+                <li><strong>Strict Pydantic JSON Schema Validation:</strong> Guarantees <strong>100% valid JSON, 0% schema violations, and zero hallucinations</strong>.</li>
+                <li><strong>Production Gateway & Interactive Dashboard:</strong> Packaged via FastAPI / Uvicorn (<code>localhost:8000</code>), under 180 MB RAM footprint, 10,700 URLs/sec.</li>
+                <li><strong>Live PhishTank Validation:</strong> Evaluated against <strong>64,281 live PhishTank URLs</strong> with zero domain-shift collapse (3,000 URLs in 0.28s).</li>
+                <li><strong>Research Conclusion:</strong> Solved the training-serving disparity with zero-network static character algebra, mathematically proved feature pruning gains, and delivered wire-speed edge defense.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>IIIT Nagpur • CSE | Final Capstone Presentation</div>
+        <div class="controls">
+            <button class="btn" onclick="prevSlide()">← Previous</button>
+            <button class="btn" onclick="nextSlide()">Next →</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let cur = 1;
+    const total = 10;
+    const titles = [
+        "PhishGuard-XAI: Project Overview",
+        "The Threat Landscape & The Blacklist Failure",
+        "Base Literature Survey & The 4 Critical Systemic Flaws",
+        "Proposed System Architecture: End-to-End Pipeline",
+        "Innovation 1: Pure Static 50-Feature Extractor (0.09 ms)",
+        "Innovation 2: Hybrid Selection & Proof: Top-30 vs 50",
+        "Innovation 3: Optuna-Tuned Stacking Ensemble",
+        "Empirical Benchmark & Adversarial Robustness",
+        "Comprehensive 7-Model Benchmark & Confusion Matrix",
+        "Explainable AI Forensics, Deployment & Conclusion"
+    ];
+
+    function show(n) {
+        document.querySelectorAll('.slide-content').forEach(el => el.classList.remove('active'));
+        document.getElementById('s' + n).classList.add('active');
+        document.getElementById('slideBadge').textContent = `Slide ${n} / ${total}`;
+        document.getElementById('slideTitle').textContent = titles[n - 1];
+    }
+    function nextSlide() { if (cur < total) { cur++; show(cur); } }
+    function prevSlide() { if (cur > 1) { cur--; show(cur); } }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+    });
+</script>
+</body>
+</html>
+
